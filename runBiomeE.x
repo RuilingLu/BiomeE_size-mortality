@@ -2,7 +2,7 @@
 FSRCS="src/datatypes.F90 \
        src/io_mod.F90 \
        src/soil.F90 \
-       src/vegetation05.F90 \
+       src/vegetation.F90 \
        src/BiomeE.F90 \
        src/main.F90"
 
