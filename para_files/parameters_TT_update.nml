@@ -1,0 +1,75 @@
+&soil_data_nml
+    soiltype = 3
+    gmd = 0.7, 0.4, 0.3, 0.1, 0.1, 0.07, 0.007
+    chb = 2.2, 2.64, 3.31, 4.38, 5.12, 6.58, 14.95
+    psi_sat_ref = -600.0, -790.0, -910.0, -1580.0, -1680.0, -1880.0, -5980.0
+    k_sat_ref = 130.8, 75.1, 53.2, 12.1, 11.1, 12.7, 1.69
+    vwc_sat = 0.38, 0.445, 0.448, 0.412, 0.414, 0.446, 0.424
+/
+
+&vegn_parameters_nml
+    f_inibsw = 0.1
+    k0som = 0.8, 0.25, 2.5, 2.0, 0.05
+    k_nitrogen = 2.4
+    rho_son = 0.02
+    etan = 0.0
+    f_m2som = 0.8
+    l_fract = 0.0
+    retransn = 0.0
+    diff_s0 = 0.2
+    kx0_wd = 5.0
+    p50_wd = -1.565
+    ths0_wd = 3.0
+    wtc0_wd = 9000.0
+    cr0_lf = 0.5
+    cr0_wd = 0.3
+    m0_wtc = 5.0
+    m0_kx = 5.0
+    m0_a = -2.5430089333971
+    m0_b = -0.5855485615591
+    m0_c = -0.00536424927645213
+    envi_fire_prb = 0.0
+    lifeform = 0, 1, 1, 1, 1, 1
+    phenotype = 0, 1, 0, 0, 0, 0
+    pt = 1, 0, 0, 0, 0, 0
+    s0_plant = 0.05, 0.05, 0.05, 0.05, 0.05, 0.05
+    lma = 0.02, 0.08, 0.08, 0.08, 0.08, 0.08
+    phirl = 0.7, 1.2, 1.2, 1.2, 1.2, 1.2
+    rho_wood = 150.0, 200, 250, 300.0, 350.0, 400.0
+    lnbase = 0.0012, 0.0012, 0.0012, 0.0012, 0.0012, 0.0012
+    m_cond = 7.0, 9.0, 9.0, 9.0, 9.0, 9.0
+    laimax = 3.5, 3.5, 3.5, 3.5, 3.5, 3.5
+    lai_light = 3.5, 3.5, 3.5, 3.5, 3.5, 3.5
+    nfixrate0 = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    nfixcost0 = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    phicsa = 2.5e-05, 2.5e-05, 2.5e-05, 2.5e-05, 2.5e-05, 2.5e-05
+    r0mort_c = 0.02, 0.024, 0.024, 0.024, 0.024, 0.024
+    a_sd = 4.0, 9.0, 9.0, 9.0, 9.0, 9.0
+    agerepro = 0, 5, 5, 5, 5, 5
+/
+
+&initial_state_nml
+    init_n_cohorts = 5
+    init_cohort_species = 3, 2, 1, 4, 5
+    init_cohort_nindivs = 0.001, 0.001, 0.001, 0.001, 0.001
+    init_cohort_bsw = 0.2, 0.2, 0.2, 0.2, 0.2
+    init_cohort_bhw = 0.0, 0.0, 0.0, 0.0, 0.0
+    init_cohort_nsc = 0.5, 0.5, 0.5, 0.5, 0.5
+    init_fast_soil_c = 0.5
+    init_slow_soil_c = 40.0
+    init_nmineral = 0.005
+    n_input = 0.02
+    filepath_in = './input/'
+    filepath_out = './output/'
+    runid = 'TT_2520'
+    climfile = 'Tiantong_forcing.txt'
+    n_vegtile = 1
+    sc_prcp = 1.0
+    model_run_years = 1500
+    outputhourly = .false.
+    outputdaily = .false.
+    do_u_shaped_mortality = .true.
+    do_wd_mort_function = .false.
+    do_variedwtc0 = .true.
+    do_variedkx = .true.
+/
