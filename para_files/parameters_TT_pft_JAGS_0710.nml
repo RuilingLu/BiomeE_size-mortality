@@ -1,0 +1,105 @@
+! Ruiling, 2026-07-12: soil/CWD-only calibration template from parameters_TT_pft_JAGS_0710.nml; 200-year bare-ground run; vegetation structure fixed; explicit CWD on; cwd_use_environment_scalar on; initial CWD fixed to zero and excluded from assimilation.
+&soil_data_nml
+    soiltype = 3
+    gmd = 0.7, 0.4, 0.3, 0.1, 0.1, 0.07, 0.007
+    chb = 2.2, 2.64, 3.31, 4.38, 5.12, 6.58, 14.95
+    psi_sat_ref = -600.0, -790.0, -910.0, -1580.0, -1680.0, -1880.0, -5980.0
+    k_sat_ref = 130.8, 75.1, 53.2, 12.1, 11.1, 12.7, 1.69
+    vwc_sat = 0.38, 0.445, 0.448, 0.412, 0.414, 0.446, 0.424
+/
+
+&vegn_parameters_nml
+    f_inibsw = 0.1
+    k0som = 0.8, 0.25, 2.5, 1.8, 0.011
+    k_nitrogen = 0.0
+    rho_son = 0.0
+    etan = 0.0
+    f_m2som = 0.8
+    l_fract = 0.0
+    retransn = 0.0
+    diff_s0 = 0.1
+    kx0_wd = 5.0
+    p50_wd = -1.565
+    ths0_wd = 3.0
+    wtc0_wd = 9000.0
+    cr0_lf = 0.5
+    cr0_wd = 0.3
+    m0_wtc = 5.0
+    m0_kx = 5.0
+    envi_fire_prb = 0.0
+    lifeform = 0, 1, 1, 1, 1, 1
+    phenotype = 0, 1, 1, 0, 1, 0
+    pt = 1, 0, 0, 0, 0, 0
+    s0_plant = 0.06, 0.05, 0.07, 0.02, 0.05, 0.05
+    prob_g = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+    prob_e = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+    lma = 0.022, 0.14025, 0.1355, 0.033, 0.0825, 0.03685
+    phirl = 0.7, 1.5, 1.5, 1.2, 2.5, 2.5
+    rho_wood = 150, 400, 690.0, 262.0, 730, 370
+    lnbase = 0.00096, 0.0008, 0.00161, 0.0019, 0.0008, 0.0011
+    m_cond = 7.0, 9.0, 9.0, 9.0, 9.0, 9.0
+    laimax = 2.0, 2.5, 1.7, 2.9, 1, 1
+    lai_light = 2.0, 2, 1.5, 2.4, 0.6, 0.6
+    nfixrate0 = 0.0, 0.15, 0.15, 0.15, 0.15, 0.15
+    nfixcost0 = 0.0, 12, 12, 12, 12, 12
+    phicsa = 0.0003, 0.0003, 0.0003, 0.0003, 0.0003, 0.0003
+    r0mort_c = 0.1, 0.051, 0.027, 0.04, 0.021, 0.1
+    a_sd = 4.0, 8.0, 8.0, 8.0, 2.0, 2.0
+    agerepro = 0, 6, 4, 4, 0, 0
+    alphaht = 36.0, 10, 20, 23, 11, 11
+    thetaht = 0.5, 0.27, 0.2, 0.36, 0.8, 0.8
+    m0_a = 0.0447, -2.246288863410049, -2.766127300203615, -2.025493251672671,
+           -3.1079477534252327, -1.8865194874831013
+    m0_b = -0.0187, -0.30836004770033454, 0.040003169262385584, -0.010648197870942951,
+           0.10769555016136116, 0.18471600296921356
+    m0_c = 0.00255, 0.6405679450054195, -0.7298255051991127, -0.5715212734935622,
+           -1.039554325893787, -0.6983413960636313
+    alpha_small = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    alpha_large = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    v_seed = 0.1, 0.1, 0.1, 0.4, 0.5, 0.5
+    use_explicit_cwd = .true.
+    cwd_use_environment_scalar = .false.
+    k0cwd = 0.24, 0.21, 0.14
+    f_cwd_to_soc = 0.40
+    f_cwd_to_soc_fast = 0.20
+/
+
+&initial_state_nml
+    init_n_cohorts = 5
+    init_cohort_species = 3, 2, 1, 4, 5
+    init_cohort_nindivs = 0.001, 0.001, 0.001, 0.001, 0.001
+    init_cohort_bsw = 0.2, 0.2, 0.2, 0.2, 0.2
+    init_cohort_bhw = 0.0, 0.0, 0.0, 0.0, 0.0
+    init_cohort_nsc = 0.5, 0.5, 0.5, 0.5, 0.5
+    init_fast_soil_c = 1.2
+    init_slow_soil_c = 30
+    init_nmineral = 0.005
+    n_input = 0.02
+    filepath_in = './input/'
+    filepath_out = './output/'
+    runid = 'TT_soil_cwd_JAGS0710_envscalar_calibration'
+    climfile = 'Tiantong_forcing.txt'
+    n_vegtile = 1
+    sc_prcp = 1.0
+    model_run_years = 400
+    outputhourly = .false.
+    outputdaily = .true.
+    do_u_shaped_mortality = .true.
+    do_starvation = .false.
+    starvation_nsc_fraction = 0.5
+    starvation_max_mortality = 0.9
+    size_mort_spinup_years = 0
+    do_wd_mort_function = .false.
+    do_variedwtc0 = .true.
+    do_variedkx = .true.
+    do_migration = .false.
+    migration_nindivs_pft = 0.01, 0.001, 0.01, 0.1, 0.5, 1.0
+    starvation_nsc_fraction_pft = 0.5, 0.5, 0.65, 0.1, 0.03, 0.01
+    starvation_max_mortality_pft = 0.9, 0.9, 0.95, 0.8, 0.5, 0.1
+    size_mortality_floor = 0.03, 0.03, 0.03, 0.03, 0.03, 0.03
+    do_pft_density_cap = .true.
+    pft_density_capacity_ha = 1e+30, 100, 6000, 1300, 1800, 100
+    equilibrium_spinup_years = 0
+    init_cwd_c = 0.0, 0.0, 0.0
+    init_cwd_n = 0.0, 0.0, 0.0
+/
